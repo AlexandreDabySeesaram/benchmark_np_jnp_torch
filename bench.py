@@ -9,8 +9,8 @@ np.random.seed(0)
 
 
 #%% Benchmark parameters
-N = 1000
-N_loop = 10
+N = 5000
+N_loop = 50
 
 print(f"--> Size of the matrices is {N}X{N}")
 print(f"--> Number of iter is {N_loop}")
