@@ -12,13 +12,13 @@ np.random.seed(0)
 
 #%% Benchmark parameters
 N_min = 10
-N_max = 10000
+N_max = 5000
 N_d = 10
 N_loop = 10
 # results = dict()
 import pickle
 
-with open("results.pkl", "rb") as f:
+with open("results_torch_2025-12-15.pkl", "rb") as f:
     results = pickle.load(f)
 
 #%% Generate data
@@ -41,6 +41,6 @@ for N in np.linspace(N_min, N_max, N_d):
 
 # import pickle
 
-with open("results_jax_torch.pkl", "wb") as f:
+with open("results_jax_torch_2025-12-15.pkl", "wb") as f:
     pickle.dump(results, f)
 # %%
