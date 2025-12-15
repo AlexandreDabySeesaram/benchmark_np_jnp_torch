@@ -47,7 +47,7 @@ plt.show()
 
 import pickle
 
-with open("results_torch_2025-12-15.pkl", "wb") as f:
+with open("results_torch_ssh_2025-12-15.pkl", "wb") as f:
     pickle.dump(results, f)
 
 

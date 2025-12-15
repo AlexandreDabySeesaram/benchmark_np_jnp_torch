@@ -18,7 +18,7 @@ N_loop = 10
 # results = dict()
 import pickle
 
-with open("results_torch_2025-12-15.pkl", "rb") as f:
+with open("results_torch_ssh_2025-12-15.pkl", "rb") as f:
     results = pickle.load(f)
 
 #%% Generate data
@@ -41,6 +41,6 @@ for N in np.linspace(N_min, N_max, N_d):
 
 # import pickle
 
-with open("results_jax_torch_2025-12-15.pkl", "wb") as f:
+with open("results_jax_torch_ssh_2025-12-15.pkl", "wb") as f:
     pickle.dump(results, f)
 # %%
