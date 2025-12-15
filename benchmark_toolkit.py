@@ -8,6 +8,7 @@ def numpy_test(methods, N_loop, matrices):
                 start = time.time()
                 for i in range(N_loop):
                     C_0 = np.trace(matrices[0]@matrices[1]@matrices[0]@matrices[1]@matrices[0]@matrices[1])
+                    # C_0 = np.trace(matrices[0]@matrices[1]@matrices[0])
                 stop = time.time()
                 duration = 1000*(stop-start)/N_loop
             case "einsum":
@@ -36,6 +37,7 @@ def torch_test(methods, N_loop, matrices, devices = ["cpu"]):
                     start = time.time()
                     for i in range(N_loop):
                         C_0 = torch.trace(matrices[0]@matrices[1]@matrices[0]@matrices[1]@matrices[0]@matrices[1])
+                        # C_0 = torch.trace(matrices[0]@matrices[1]@matrices[0])
                     stop = time.time()
                     duration = 1000*(stop-start)/N_loop
 
@@ -44,6 +46,7 @@ def torch_test(methods, N_loop, matrices, devices = ["cpu"]):
                         start = time.time()
                         for i in range(N_loop):
                             C_1 = torch.einsum('ij,jk,kl,lm,mn,ni->', matrices[0], matrices[1],matrices[0], matrices[1],matrices[0], matrices[1])
+                            # C_1 = torch.einsum('ij,jk,ki->', matrices[0], matrices[1],matrices[0])
                         stop = time.time()
                         duration = 1000*(stop-start)/N_loop
                     except:

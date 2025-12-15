@@ -9,8 +9,8 @@ np.random.seed(0)
 
 
 #%% Benchmark parameters
-N = 5000
-N_loop = 50
+N = 5000 
+N_loop = 5
 
 print(f"--> Size of the matrices is {N}X{N}")
 print(f"--> Number of iter is {N_loop}")
@@ -30,3 +30,5 @@ matrices_torch = [torch.tensor(A),torch.tensor(B)]
 
 
 bt.torch_test(methods = ["matmul","einsum"], N_loop=N_loop, matrices = matrices_torch, devices = ["cpu","mps"])
+
+# %%
